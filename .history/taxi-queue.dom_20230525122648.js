@@ -12,10 +12,8 @@ const depart = document.querySelector(".depart")
 
 
 
-let passenger_count = localStorage.getItem('passenger_count')
-let taxi_count = localStorage.getItem('taxi_count') 
-passenger_queue_count.innerHTML = passenger_count;
-taxi_queue_count.innerHTML = taxi_count
+let passenger_count = localStorage.getItem('passenger_count') || 0
+let taxi_count = localStorage.getItem('taxi_count') || 0
 const taxiQueue = TaxiQueue(passenger_count, taxi_count);
 
 
@@ -47,11 +45,7 @@ function add_taxi() {
 
 
 function taxi_depart() {
-taxiQueue.taxiDepart()
-passenger_queue_count.innerHTML = taxiQueue.queueLength()
- localStorage.setItem('passenger_count', taxiQueue.queueLength())
- taxi_queue_count.innerHTML = taxiQueue.taxiQueueLength()
- localStorage.setItem('taxi_count', taxiQueue.taxiQueueLength())
+ return taxiQueue.taxiDepart()
 }
 
 

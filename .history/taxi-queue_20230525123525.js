@@ -5,9 +5,11 @@ function TaxiQueue(people, taxi) {
   }
 
   function leaveQueue() {
-    if (people > 0) {
-		people--;
-	  }
+    if (people === 0) {
+      return (people = 0);
+    } else {
+      return people--;
+    }
   }
 
   function joinTaxiQueue() {

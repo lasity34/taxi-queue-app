@@ -47,11 +47,7 @@ function add_taxi() {
 
 
 function taxi_depart() {
-taxiQueue.taxiDepart()
-passenger_queue_count.innerHTML = taxiQueue.queueLength()
- localStorage.setItem('passenger_count', taxiQueue.queueLength())
- taxi_queue_count.innerHTML = taxiQueue.taxiQueueLength()
- localStorage.setItem('taxi_count', taxiQueue.taxiQueueLength())
+ return taxiQueue.taxiDepart()
 }
 
 

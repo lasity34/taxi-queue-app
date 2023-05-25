@@ -5,20 +5,27 @@ function TaxiQueue(people, taxi) {
   }
 
   function leaveQueue() {
-    if (people > 0) {
-		people--;
+    if (people >= 12 && taxi > 0) {
+		taxi--;
+		people -= 12;
 	  }
-  }
+	}
+  
 
   function joinTaxiQueue() {
     taxi++;
   }
 
   function taxiDepart() {
-    if (people >= 12 && taxi > 0) {
-		taxi--;
-		people -= 12;
-	  }
+    if (people < 12) {
+      return people;
+    } else if (taxi === 0) {
+		return taxi
+	}
+	else {
+      taxi--;
+      people -= 12;
+    }
   }
 
   function taxiQueueLength() {
