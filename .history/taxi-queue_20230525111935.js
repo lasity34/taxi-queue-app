@@ -19,15 +19,13 @@ function TaxiQueue() {
   }
 
   function taxiDepart() {
-    if (people < 12) {
-      return people;
-    } else if (taxi === 0) {
-		return taxi
+	if (people < 12) {
+	return	people
+	} else {
+		
+		taxi--;
+		people -= 12;
 	}
-	else {
-      taxi--;
-      people -= 12;
-    }
   }
 
   function taxiQueueLength() {

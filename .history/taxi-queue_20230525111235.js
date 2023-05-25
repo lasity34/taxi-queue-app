@@ -3,7 +3,7 @@ function TaxiQueue() {
   let taxi = 0;
 
   function joinQueue() {
-    people++;
+    return people++;
   }
 
   function leaveQueue() {
@@ -15,24 +15,22 @@ function TaxiQueue() {
   }
 
   function joinTaxiQueue() {
-    taxi++;
+    return taxi++;
   }
 
   function taxiDepart() {
-    if (people < 12) {
-      return people;
-    } else if (taxi === 0) {
-		return taxi
-	}
-	else {
+    if (people === 12) {
       taxi--;
-      people -= 12;
+      people = people - 12;
     }
+
   }
 
   function taxiQueueLength() {
     return taxi;
   }
+
+
 
   function queueLength() {
     return people;

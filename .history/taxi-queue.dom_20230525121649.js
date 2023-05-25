@@ -14,7 +14,7 @@ const taxi_queue_count = document.querySelector(".taxi_queue_count")
 const taxiQueue = TaxiQueue();
 
 passenger_queue_count.innerHTML = localStorage.getItem('passenger_count')
-taxi_queue_count.innerHTML = localStorage.getItem('taxi_count') || 0
+taxi_queue_count.innerHTML = localStorage.getItem('taxi_count')
 
 // DOM events
 
